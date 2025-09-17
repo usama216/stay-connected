@@ -114,7 +114,7 @@ export default function Partners() {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-20">
+        {/* <div className="text-center mt-20">
           <div className="bg-gradient-to-r from-brand-red/5 to-brand-red/10 rounded-3xl p-12 border border-brand-red/20">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Ready to Partner With Us?</h3>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -124,7 +124,7 @@ export default function Partners() {
               Become a Partner
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )
