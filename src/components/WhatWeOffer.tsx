@@ -129,6 +129,17 @@ export default function WhatWeOffer() {
           ))}
         </div>
 
+        {/* View All Services Button */}
+        <div className="text-center mb-16">
+          <a 
+            href="/services"
+            className="inline-flex items-center bg-gradient-to-r from-brand-red to-brand-red-dark text-white px-8 py-4 rounded-full font-semibold hover:from-brand-red-dark hover:to-brand-red transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
+          >
+            View All Services
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </a>
+        </div>
+
         {/* CTA Section */}
         <div className="text-center bg-gradient-to-r from-brand-red to-brand-red-dark rounded-3xl p-12 text-white">
           <h3 className="text-3xl font-bold mb-4">Ready to Get Started?</h3>
