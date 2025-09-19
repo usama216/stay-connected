@@ -23,9 +23,10 @@ module.exports = {
         brand: {
           red: '#dc2626',
           'red-light': '#f87171',
-          'red-dark': '#991b1b',
-          blue: '#1e40af',
-          'blue-light': '#3b82f6',
+          'red-dark': '#b91c1c',
+          blue: '#3b82f6',
+          'blue-light': '#93c5fd',
+          'blue-dark': '#2563eb',
           gray: '#374151',
           'gray-light': '#6b7280',
         }

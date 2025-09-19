@@ -1,6 +1,12 @@
 'use client'
 
-import { Star, ChevronRight, Quote, Shield } from 'lucide-react'
+import { Star, ChevronRight, Quote, Shield, ChevronLeft, ChevronRight as ChevronRightIcon } from 'lucide-react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Autoplay } from 'swiper/modules'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
 
 export default function Testimonials() {
   const testimonials = [
@@ -62,75 +68,88 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2"
-            >
-              {/* Quote Icon */}
-              <div className="absolute top-6 right-6 w-12 h-12 bg-brand-red/20 rounded-full flex items-center justify-center">
-                <Quote className="w-6 h-6 text-brand-red" />
-              </div>
+        {/* Testimonials Carousel */}
+        <div className="relative">
+          {/* Navigation Buttons - Top Right */}
+          <div className="absolute -top-16 right-4 z-30 flex space-x-3">
+            <button className="swiper-button-prev-custom w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 hover:scale-110 group">
+              <ChevronLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" />
+            </button>
+            <button className="swiper-button-next-custom w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 hover:scale-110 group">
+              <ChevronRightIcon className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+            </button>
+          </div>
 
-              {/* Rating */}
-              <div className="flex items-center mb-6">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              
-              {/* Content */}
-              <p className="text-gray-300 leading-relaxed mb-8 text-lg">
-                "{testimonial.content}"
-              </p>
-              
-              {/* Author Info */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-light rounded-full flex items-center justify-center text-white font-bold">
-                    {testimonial.avatar}
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation={{
+              nextEl: '.swiper-button-next-custom',
+              prevEl: '.swiper-button-prev-custom',
+            }}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+              },
+            }}
+            className="testimonials-swiper"
+          >
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <div className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 h-full">
+                  {/* Quote Icon */}
+                  <div className="absolute top-6 right-20 w-12 h-12 bg-brand-red/20 rounded-full flex items-center justify-center">
+                    <Quote className="w-6 h-6 text-brand-red" />
                   </div>
-                  <div>
-                    <div className="font-semibold text-white text-lg">
-                      {testimonial.author}
-                    </div>
-                    <div className="text-gray-400 text-sm">
-                      {testimonial.position}
-                    </div>
-                    <div className="text-brand-red text-sm font-medium">
-                      {testimonial.company}
+
+                  {/* Rating */}
+                  <div className="flex items-center mb-6">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  
+                  {/* Content */}
+                  <p className="text-gray-300 leading-relaxed mb-8 text-lg">
+                    "{testimonial.content}"
+                  </p>
+                  
+                  {/* Author Info */}
+                  <div className="flex items-center">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-light rounded-full flex items-center justify-center text-white font-bold">
+                        {testimonial.avatar}
+                      </div>
+                      <div>
+                        <div className="font-semibold text-white text-lg">
+                          {testimonial.author}
+                        </div>
+                        <div className="text-gray-400 text-sm">
+                          {testimonial.position}
+                        </div>
+                        <div className="text-brand-red text-sm font-medium">
+                          {testimonial.company}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <button className="flex items-center space-x-2 text-brand-red hover:text-brand-red-light transition-colors group">
-                  <span className="text-sm font-medium">Read more</span>
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
-            </div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center bg-gradient-to-r from-brand-red/10 to-brand-red/5 border border-brand-red/20 rounded-3xl p-12">
-          <h3 className="text-3xl font-bold text-white mb-4">Ready to Join Our Success Stories?</h3>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Let us help you achieve the same level of success and satisfaction as our other clients.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-gradient-to-r from-brand-red to-brand-red-dark text-white px-8 py-4 rounded-full font-semibold hover:from-brand-red-dark hover:to-brand-red transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
-            >
-              Get Started Today
-            </button>
-            <button className="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300">
-              View All Testimonials
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   )

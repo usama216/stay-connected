@@ -8,53 +8,54 @@ import {
   Users, 
   GraduationCap,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Camera,
+  Volume2,
+  AlertTriangle
 } from 'lucide-react'
 
 export default function WhatWeOffer() {
   const services = [
     {
-      icon: Settings,
-      title: 'Managed IT Services',
-      description: 'Comprehensive IT management solutions to keep your business running smoothly with 24/7 monitoring and support.',
-      features: ['24/7 Monitoring', 'Proactive Maintenance', 'Rapid Response'],
-      color: 'from-blue-500 to-blue-600'
-    },
-    {
       icon: Wifi,
-      title: 'Network Infrastructure',
-      description: 'Professional network infrastructure design and installation for reliable, high-speed connectivity.',
-      features: ['Fiber Optic Cabling', 'Wireless Solutions', 'Network Design'],
-      color: 'from-purple-500 to-purple-600'
-    },
-    {
-      icon: Home,
-      title: 'Smart Automation',
-      description: 'Transform your home or office with intelligent automation systems for security, lighting, and climate control.',
-      features: ['Home Security', 'Smart Lighting', 'Climate Control'],
-      color: 'from-green-500 to-green-600'
+      title: 'Network',
+      description: 'A strong and secure network is the foundation of every modern home and business. We provide complete network design, structured cabling, and Wi-Fi optimisation to ensure reliable connectivity in every corner of your property.',
+      features: ['Complete Network Design', 'Structured Cabling', 'Wi-Fi Optimisation', 'Scalable Solutions'],
+      color: 'from-blue-500 to-blue-600',
+      image: '/services/standard-quality-control-concept-m.jpg'
     },
     {
       icon: Shield,
-      title: 'Security Solutions',
-      description: 'Expert security assessment and implementation to protect your digital assets from cyber threats.',
-      features: ['CCTV Systems', 'Access Control', 'Alarm Systems'],
-      color: 'from-red-500 to-red-600'
+      title: 'Alarm (Ajax Security Systems)',
+      description: 'Security starts with an alarm system you can depend on. We specialise in Ajax — one of the most advanced alarm systems available today. With sleek wireless devices, powerful monitoring features, and instant smartphone alerts.',
+      features: ['Wireless Devices', 'Smartphone Alerts', 'Professional Installation', '24/7 Monitoring'],
+      color: 'from-red-500 to-red-600',
+      image: '/services/alaram.jpg'
     },
     {
-      icon: Users,
-      title: 'Consulting Services',
-      description: 'Strategic IT consulting to help you make informed decisions about your technology infrastructure.',
-      features: ['IT Strategy', 'Technology Assessment', 'Implementation Planning'],
-      color: 'from-orange-500 to-orange-600'
+      icon: Camera,
+      title: 'CCTV',
+      description: 'Protect what matters most with high-definition CCTV solutions from leading brands. We install Hikvision, Uniview, and Ajax cameras, giving you a wide choice of trusted technology for any property size or requirement.',
+      features: ['HD/4K Cameras', 'Night Vision', 'Motion Alerts', 'Remote Viewing'],
+      color: 'from-purple-500 to-purple-600',
+      image: '/services/cctv.jpg'
     },
     {
-      icon: GraduationCap,
-      title: 'Training Programs',
-      description: 'Professional training programs to develop your team\'s networking and security expertise.',
-      features: ['Certification Training', 'Hands-on Labs', 'Ongoing Support'],
-      color: 'from-indigo-500 to-indigo-600'
+      icon: Home,
+      title: 'Automation',
+      description: 'As an official Loxone Partner, we deliver smart automation systems that transform the way you live and work. From intelligent lighting and heating to blinds, gates, and full building management.',
+      features: ['Smart Lighting', 'Climate Control', 'Building Management', 'Voice Integration'],
+      color: 'from-green-500 to-green-600',
+      image: '/services/automation.jpg'
     },
+    {
+      icon: Volume2,
+      title: 'Audio Visual',
+      description: 'Experience entertainment like never before with bespoke audio-visual solutions. Whether you\'re looking for a cinematic home theatre, multi-room audio, or professional AV systems for offices.',
+      features: ['Home Theatre', 'Multi-room Audio', 'Professional AV', 'Concealed Cabling'],
+      color: 'from-orange-500 to-orange-600',
+      image: '/services/audio-visuals.jpg'
+    }
   ]
 
   return (
@@ -87,58 +88,49 @@ export default function WhatWeOffer() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
+              className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
             >
-              {/* Gradient Background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
-              
-              {/* Icon */}
-              <div className={`relative w-16 h-16 bg-gradient-to-r ${service.color} text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <service.icon className="w-8 h-8" />
+              {/* Image Section */}
+              <div className="relative h-60 overflow-hidden rounded-t-3xl">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                {/* Gradient Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-20 group-hover:opacity-30 transition-opacity duration-500`}></div>
               </div>
               
-              {/* Content */}
-              <div className="relative">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-brand-red transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  {service.description}
-                </p>
+              {/* Content Section */}
+              <div className="p-8">
+                {/* Gradient Background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
                 
-                {/* Features */}
-                <div className="space-y-2 mb-6">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-brand-red flex-shrink-0" />
-                      <span className="text-sm text-gray-600">{feature}</span>
-                    </div>
-                  ))}
+                {/* Content */}
+                <div className="relative">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-brand-red transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    {service.description}
+                  </p>
+                  
+                  {/* Features */}
+                  <div className="space-y-2 mb-6">
+                    {service.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center space-x-2">
+                        <CheckCircle className="w-4 h-4 text-brand-red flex-shrink-0" />
+                        <span className="text-sm text-gray-600">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
                 </div>
-                
-                {/* CTA */}
-                <a 
-                  href="#" 
-                  className="inline-flex items-center text-brand-red font-semibold hover:text-brand-red-dark transition-colors group-hover:translate-x-2 transform duration-300"
-                >
-                  Learn More
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
               </div>
             </div>
           ))}
         </div>
 
-        {/* View All Services Button */}
-        <div className="text-center mb-16">
-          <a 
-            href="/services"
-            className="inline-flex items-center bg-gradient-to-r from-brand-red to-brand-red-dark text-white px-8 py-4 rounded-full font-semibold hover:from-brand-red-dark hover:to-brand-red transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
-          >
-            View All Services
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </a>
-        </div>
 
         {/* CTA Section */}
         <div className="text-center bg-gradient-to-r from-brand-red to-brand-red-dark rounded-3xl p-12 text-white">
@@ -153,12 +145,12 @@ export default function WhatWeOffer() {
             >
               Get Free Consultation
             </button>
-            <a 
-              href="/services"
+            <button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-brand-red transition-all duration-300 inline-block"
             >
-              View All Services
-            </a>
+              Contact Us
+            </button>
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ import {
   Clock,
   CheckCircle
 } from 'lucide-react'
+import Image from 'next/image'
 
 export default function WhyChooseUs() {
   const features = [
@@ -133,15 +134,21 @@ export default function WhyChooseUs() {
               </div>
               
               {/* Central Content */}
-              <div className="relative z-10 text-center">
-                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-2xl group hover:scale-110 transition-transform duration-300">
-                  <div className="w-12 h-12 bg-brand-red rounded-xl flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-                <h4 className="text-2xl font-bold text-white mb-2">Trusted Partner</h4>
-                <p className="text-white/80 text-sm">Your Security is Our Priority</p>
-              </div>
+             <div className="relative z-10 text-center">
+                            <div className="w-40 h-40 bg-white rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-2xl group hover:scale-110 transition-transform duration-300">
+                            
+                               <div className="w-28 h-28 relative group-hover:scale-110 transition-transform duration-300">
+                                            <Image
+                                              src="/log-white.jpeg"
+                                              alt="Stay Connected Logo"
+                                              fill
+                                              className="object-contain"
+                                              priority
+                                            />
+                                          </div>
+                            </div>
+                         
+                          </div>
 
               {/* Floating Elements */}
               <div className="absolute top-8 right-8 w-3 h-3 bg-brand-red rounded-full animate-bounce delay-300"></div>
@@ -152,35 +159,88 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-gradient-to-r from-brand-red to-brand-red-dark rounded-3xl p-12 text-white relative overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-4 left-4 w-32 h-32 bg-white rounded-full blur-2xl"></div>
-            <div className="absolute bottom-4 right-4 w-40 h-40 bg-white rounded-full blur-2xl"></div>
+        <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-3xl p-16 text-white overflow-hidden">
+          {/* Modern Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-red/5 via-transparent to-brand-blue/5"></div>
+            <div className="absolute top-10 right-10 w-72 h-72 bg-brand-red/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-10 left-10 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+            
+            {/* Floating geometric shapes */}
+            <div className="absolute top-20 left-20 w-2 h-2 bg-brand-red rounded-full animate-bounce delay-300"></div>
+            <div className="absolute top-32 right-32 w-3 h-3 bg-brand-blue rounded-full animate-bounce delay-700"></div>
+            <div className="absolute bottom-20 left-1/3 w-1 h-1 bg-white rounded-full animate-bounce delay-1000"></div>
+            <div className="absolute bottom-32 right-1/4 w-2 h-2 bg-brand-red rounded-full animate-bounce delay-500"></div>
           </div>
           
           <div className="relative z-10">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold mb-4">Our Impact in Numbers</h3>
-              <p className="text-white/90 text-lg">Delivering excellence across every project</p>
+            {/* Header */}
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-sm font-medium mb-6">
+                <div className="w-2 h-2 bg-brand-red rounded-full mr-3 animate-pulse"></div>
+                Our Impact
+              </div>
+              <h3 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-white to-gray-300 bg-clip-text text-transparent">
+                Our Impact in Numbers
+              </h3>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Delivering excellence across every project with measurable results that speak for themselves
+              </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-              <div className="group">
-                <div className="text-5xl md:text-6xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
-                <div className="text-white/80 text-lg">Projects Completed</div>
+            {/* Stats Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="group relative">
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                  <div className="relative">
+                    <div className="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                      500+
+                    </div>
+                    <div className="text-white/80 text-lg font-medium">Projects Completed</div>
+                    <div className="text-white/60 text-sm mt-2">Successfully delivered</div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-brand-red/0 to-brand-red/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </div>
-              <div className="group">
-                <div className="text-5xl md:text-6xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">99.9%</div>
-                <div className="text-white/80 text-lg">Client Satisfaction</div>
+              
+              <div className="group relative">
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                  <div className="relative">
+                    <div className="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-brand-blue to-brand-blue-light bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                      99%
+                    </div>
+                    <div className="text-white/80 text-lg font-medium">Client Satisfaction</div>
+                    <div className="text-white/60 text-sm mt-2">Happy customers</div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/0 to-brand-blue/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </div>
-              <div className="group">
-                <div className="text-5xl md:text-6xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
-                <div className="text-white/80 text-lg">Support Available</div>
+              
+              <div className="group relative">
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                  <div className="relative">
+                    <div className="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                      24/7
+                    </div>
+                    <div className="text-white/80 text-lg font-medium">Support Available</div>
+                    <div className="text-white/60 text-sm mt-2">Always here for you</div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-400/0 to-green-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </div>
-              <div className="group">
-                <div className="text-5xl md:text-6xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">10+</div>
-                <div className="text-white/80 text-lg">Years Experience</div>
+              
+              <div className="group relative">
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                  <div className="relative">
+                    <div className="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-purple-300 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                      10+
+                    </div>
+                    <div className="text-white/80 text-lg font-medium">Years Experience</div>
+                    <div className="text-white/60 text-sm mt-2">Industry expertise</div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400/0 to-purple-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </div>
             </div>
           </div>

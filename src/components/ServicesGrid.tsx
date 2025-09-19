@@ -18,40 +18,44 @@ import {
 export default function ServicesGrid() {
   const serviceCategories = [
     {
-      title: 'Network & Wireless Infrastructure',
+      title: 'Network',
       icon: Wifi,
       color: 'from-blue-500 to-blue-600',
+      image: '/services/standard-quality-control-concept-m.jpg',
       services: [
         {
-          title: 'Managed IT Services',
-          description: 'Managed Network Services (MNS) ensure efficient, secure, and reliable network operations, allowing businesses to focus on core activities.',
-          features: ['24/7 Monitoring', 'Proactive Maintenance', 'Rapid Response', 'Security Management'],
+          title: 'Complete Network Design',
+          description: 'A strong and secure network is the foundation of every modern home and business. We provide complete network design, structured cabling, and Wi-Fi optimisation to ensure reliable connectivity in every corner of your property.',
+          features: ['Structured Cabling', 'Wi-Fi Optimisation', 'Scalable Design', 'Future-Ready Solutions'],
           buttonText: 'Learn More'
         },
         {
-          title: 'Structured Cabling',
-          description: 'Delivering high-quality structured cabling solutions to enhance connectivity and performance. More than 20 years of experience in the structured cabling industry.',
-          features: ['Fiber Optic Installation', 'Cat6/Cat6a Cabling', 'Cable Management', 'Testing & Certification'],
+          title: 'Office & Home Networks',
+          description: 'Whether you need a robust office setup, high-speed home network for streaming and gaming, or a system that supports multiple users and devices, we deliver tailored solutions that are stable, scalable, and future-ready.',
+          features: ['High-Speed Connectivity', 'Multi-User Support', 'Gaming Optimized', 'Streaming Ready'],
+          buttonText: 'Get Quote',
+          secondaryButton: 'Contact Us'
+        }
+      ]
+    },
+    {
+      title: 'Alarm (Ajax Security Systems)',
+      icon: AlertTriangle,
+      color: 'from-red-500 to-red-600',
+      image: '/services/alaram.jpg',
+      services: [
+        {
+          title: 'Ajax Alarm Systems',
+          description: 'Security starts with an alarm system you can depend on. We specialise in Ajax — one of the most advanced alarm systems available today. With sleek wireless devices, powerful monitoring features, and instant smartphone alerts.',
+          features: ['Wireless Devices', 'Smartphone Alerts', 'Professional Installation', '24/7 Monitoring'],
           buttonText: 'Learn More'
         },
         {
-          title: 'Network & Wireless Design',
-          description: 'We offer comprehensive network and wireless services, including assessment, design, installation, and optimization for optimal performance and coverage.',
-          features: ['Site Survey', 'Network Planning', 'Wireless Optimization', 'Performance Tuning'],
-          buttonText: 'Learn More'
-        },
-        {
-          title: 'Enterprise WAN/LAN',
-          description: 'We offer tailored WAN and LAN services, including design, optimization, SDWAN solutions, and robust security.',
-          features: ['SDWAN Solutions', 'LAN Optimization', 'Security Integration', 'Scalable Design'],
-          buttonText: 'Learn More'
-        },
-        {
-          title: 'Consultancy',
-          description: 'At STAYCONNECTED, we specialize in providing expert network and security consultancy services to businesses of all sizes. With a team of seasoned professionals and years of industry experience, we are dedicated to helping organizations enhance their network infrastructure and fortify their cybersecurity defenses.',
-          features: ['Network Assessment', 'Security Audits', 'Strategic Planning', 'Implementation Support'],
-          buttonText: 'Order Services Now',
-          secondaryButton: 'Get In Touch'
+          title: 'Complete Security Package',
+          description: 'From motion detectors and door contacts to outdoor sirens, indoor sounders, and keypads, every component is designed for reliability and ease of use. Professionally installed and configured, your Ajax system will protect your home or business around the clock.',
+          features: ['Motion Detectors', 'Door Contacts', 'Outdoor Sirens', 'Indoor Sounders'],
+          buttonText: 'Get Quote',
+          secondaryButton: 'Contact Us'
         }
       ]
     },
@@ -59,132 +63,62 @@ export default function ServicesGrid() {
       title: 'CCTV',
       icon: Camera,
       color: 'from-purple-500 to-purple-600',
+      image: '/services/cctv.jpg',
       services: [
         {
-          title: 'Security Cameras',
-          description: 'At STAYCONNECTED, we provide high-quality security cameras and surveillance systems with advanced technology to protect businesses, homes, and organizations, ensuring the safety of your property, assets, and loved ones.',
-          features: ['HD/4K Cameras', 'Night Vision', 'Remote Monitoring', 'Mobile App Access'],
+          title: 'HD CCTV Solutions',
+          description: 'Protect what matters most with high-definition CCTV solutions from leading brands. We install Hikvision, Uniview, and Ajax cameras, giving you a wide choice of trusted technology for any property size or requirement.',
+          features: ['Hikvision Cameras', 'Uniview Technology', 'Ajax Integration', 'HD/4K Quality'],
           buttonText: 'Learn More'
         },
         {
-          title: 'System Package',
-          description: 'Our team of experts works closely with you to understand your security needs and secure more like real-time solutions for your specific requirements and budget.',
-          features: ['Custom Packages', 'Professional Installation', 'Training & Support', 'Maintenance Plans'],
-          buttonText: 'Learn More'
-        },
-        {
-          title: 'Security Lighting',
-          description: 'At STAYCONNECTED, we specialize in providing high-quality security lighting solutions to enhance the safety and security of your property. With our extensive range of products and expertise in lighting technology, we are committed to helping you create a visible environment that deters intruders and improves visibility.',
-          features: ['LED Security Lights', 'Motion Sensors', 'Solar Powered', 'Smart Controls'],
-          buttonText: 'Order Services Now',
-          secondaryButton: 'Get In Touch'
+          title: 'AI-Powered Surveillance',
+          description: 'From discreet indoor domes to advanced AI-powered outdoor cameras with night vision, motion alerts, and remote mobile viewing, we design systems tailored to your needs. With crystal-clear footage and reliable performance.',
+          features: ['AI-Powered Detection', 'Night Vision', 'Motion Alerts', 'Mobile Viewing'],
+          buttonText: 'Get Quote',
+          secondaryButton: 'Contact Us'
         }
       ]
     },
     {
-      title: 'Home & Smart Automation',
+      title: 'Automation (Loxone)',
       icon: Home,
       color: 'from-green-500 to-green-600',
+      image: '/services/automation.jpg',
       services: [
         {
-          title: 'Loxone',
-          description: 'As a smart home and building automation solution, Loxone integrates a wide range of functions, including lighting, heating, ventilation, air conditioning (HVAC), security, and multimedia, into a single, unified platform. STAYCONNECTED is proud to be a Loxone Silver Partner.',
-          features: ['Smart Lighting', 'Climate Control', 'Security Integration', 'Voice Control'],
+          title: 'Loxone Smart Automation',
+          description: 'As an official Loxone Partner, we deliver smart automation systems that transform the way you live and work. From intelligent lighting and heating to blinds, gates, and full building management.',
+          features: ['Smart Lighting', 'Climate Control', 'Blinds & Gates', 'Building Management'],
           buttonText: 'Learn More'
         },
         {
-          title: 'Lightwave RF',
-          description: 'At STAYCONNECTED, we offer innovative smart home products powered by Lightwave RF technology, leveraging our home automation expertise to create a smarter, more efficient, and comfortable home environment.',
-          features: ['Smart Switches', 'Dimmer Controls', 'Smart Sockets', 'Remote Control'],
-          buttonText: 'Learn More'
+          title: 'Energy-Efficient Solutions',
+          description: 'Automation not only adds comfort and convenience but also improves security and reduces running costs. With integration into mobile apps and voice assistants, you\'ll have full control of your home or business at the touch of a button.',
+          features: ['Energy Efficiency', 'Mobile App Control', 'Voice Integration', 'Cost Reduction'],
+          buttonText: 'Get Quote',
+          secondaryButton: 'Contact Us'
         }
       ]
     },
     {
-      title: 'Audio & Visual',
+      title: 'Audio Visual',
       icon: Volume2,
       color: 'from-orange-500 to-orange-600',
+      image: '/services/audio-visuals.jpg',
       services: [
         {
-          title: 'Home Cinema',
-          description: 'At STAYCONNECTED, we provide state-of-the-art home cinema systems for an immersive entertainment experience. With our expertise in audiovisual technology, we help you create the ultimate cinematic experience tailored to your lifestyle.',
-          features: ['4K/8K Projectors', 'Surround Sound', 'Acoustic Treatment', 'Smart Integration'],
+          title: 'Home Theatre Systems',
+          description: 'Experience entertainment like never before with bespoke audio-visual solutions. Whether you\'re looking for a cinematic home theatre, multi-room audio, or professional AV systems for offices, retail, or hospitality.',
+          features: ['Cinematic Experience', 'Multi-room Audio', 'Professional AV', 'Custom Design'],
           buttonText: 'Learn More'
         },
         {
-          title: 'Multi Room Audio',
-          description: 'Welcome to our Multi Room Audio section, featuring the latest technology to fill every room with your favorite sounds, providing an immersive, seamless experience with a your smart home ecosystem.',
-          features: ['Zone Control', 'Wireless Streaming', 'Voice Integration', 'Custom Installation'],
-          buttonText: 'Learn More'
-        }
-      ]
-    },
-    {
-      title: 'Alarms Systems',
-      icon: AlertTriangle,
-      color: 'from-red-500 to-red-600',
-      services: [
-        {
-          title: 'Wired and Wireless Systems',
-          description: 'In today\'s interconnected world, wired and wireless systems are crucial for communication, data transfer, and accessing information. Such systems offer distinct advantages tailored to diverse needs and environments. This introduction explores the fundamentals, benefits, and applications of both wired and wireless systems.',
-          features: ['Wired Reliability', 'Wireless Flexibility', 'Hybrid Solutions', 'Remote Monitoring'],
-          buttonText: 'Learn More'
-        },
-        {
-          title: 'Smart Alarms',
-          description: 'Welcome to our Smart Alarms section, showcasing advanced technology for enhanced home security and peace of mind. Discover features, benefits, and applications to protect your home and loved ones effectively.',
-          features: ['Smart Sensors', 'Mobile Alerts', 'Professional Monitoring', 'Integration Ready'],
-          buttonText: 'Learn More'
-        }
-      ]
-    },
-    {
-      title: 'Training',
-      icon: GraduationCap,
-      color: 'from-indigo-500 to-indigo-600',
-      services: [
-        {
-          title: 'CCNA',
-          description: 'The Cisco Certified Network Associate (CCNA) certification by Cisco validates skills in networking fundamentals, equipping candidates to install, configure, operate, and troubleshoot medium-sized routers and switched networks.',
-          features: ['Network Fundamentals', 'Routing & Switching', 'Security Basics', 'Troubleshooting'],
-          buttonText: 'Learn More'
-        },
-        {
-          title: 'CCNP',
-          description: 'The Cisco Certified Network Professional (CCNP) certification program validates advanced skills in planning, implementing, verifying, and troubleshooting enterprise networks. Intended for experienced professionals, CCNP equips candidates to work independently on complex network solutions.',
-          features: ['Advanced Routing', 'Enterprise Design', 'Security Implementation', 'Troubleshooting'],
-          buttonText: 'Learn More'
-        },
-        {
-          title: 'CCIE',
-          description: 'The Cisco Certified Internetwork Expert (CCIE) is Cisco\'s top-tier certification, acknowledging individuals with expert-level knowledge and skills in networking. Widely regarded as one of the most prestigious and challenging certifications in IT.',
-          features: ['Expert Level', 'Hands-on Labs', 'Real-world Scenarios', 'Industry Recognition'],
-          buttonText: 'Order Services Now',
-          secondaryButton: 'Get In Touch'
-        },
-        {
-          title: 'JNCIA',
-          description: 'The Juniper Networks Certified Internet Associate (JNCIA) is an entry-level certification that builds on the foundational JNOA, offering knowledge of networking concepts and Juniper\'s technology.',
-          features: ['Juniper Basics', 'Network Concepts', 'Configuration', 'Troubleshooting'],
-          buttonText: 'Learn More'
-        },
-        {
-          title: 'JNCIS',
-          description: 'The Juniper Networks Certified Internet Specialist (JNCIS) is an intermediate certification that builds on the foundational JNOA, offering advanced knowledge of Juniper\'s networking technology.',
-          features: ['Advanced Juniper', 'Specialized Tracks', 'Hands-on Labs', 'Professional Level'],
-          buttonText: 'Learn More'
-        },
-        {
-          title: 'Fortinet',
-          description: 'Fortinet training consists of educational programs and resources provided by Fortinet, a global leader in cybersecurity, designed to equip individuals with the skills to deploy, manage, and troubleshoot Fortinet products and solutions.',
-          features: ['Cybersecurity', 'Firewall Management', 'Security Operations', 'FortiGate Training'],
-          buttonText: 'Learn More'
-        },
-        {
-          title: 'Data Analytics',
-          description: 'Data analytics involves examining raw data to extract insights and make decisions using techniques like statistical analysis, data mining, and machine learning. Training in this field equips individuals with the skills to analyze data effectively.',
-          features: ['Statistical Analysis', 'Data Mining', 'Machine Learning', 'Visualization'],
-          buttonText: 'Learn More'
+          title: 'Professional Installation',
+          description: 'Our installations cover everything from concealed cabling and precision speaker placement to high-quality projectors and surround-sound systems. With intuitive controls and premium equipment, your AV system will look sleek, sound incredible, and be simple to use.',
+          features: ['Concealed Cabling', 'Precision Placement', 'Premium Equipment', 'Intuitive Controls'],
+          buttonText: 'Get Quote',
+          secondaryButton: 'Contact Us'
         }
       ]
     }
@@ -203,13 +137,23 @@ export default function ServicesGrid() {
           <div key={categoryIndex} className="mb-20">
             {/* Category Header */}
             <div className="text-center mb-12">
-              <div className="flex items-center justify-center mb-6">
-                <div className={`w-16 h-16 bg-gradient-to-r ${category.color} text-white rounded-2xl flex items-center justify-center mr-4`}>
-                  <category.icon className="w-8 h-8" />
+              <div className="relative mb-8">
+                {/* Background Image */}
+                <div className="relative h-48 rounded-3xl overflow-hidden mb-6">
+                  <img
+                    src={category.image}
+                    alt={category.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-60`}></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <h2 className="text-4xl md:text-5xl font-bold text-white">
+                        {category.title}
+                      </h2>
+                    </div>
+                  </div>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                  {category.title}
-                </h2>
               </div>
             </div>
 
@@ -243,18 +187,6 @@ export default function ServicesGrid() {
                       ))}
                     </div>
                     
-                    {/* Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      <button className="flex-1 bg-gradient-to-r from-brand-red to-brand-red-dark text-white px-6 py-3 rounded-full font-semibold hover:from-brand-red-dark hover:to-brand-red transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform flex items-center justify-center">
-                        {service.buttonText}
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </button>
-                      {service.secondaryButton && (
-                        <button className="flex-1 border-2 border-brand-red text-brand-red px-6 py-3 rounded-full font-semibold hover:bg-brand-red hover:text-white transition-all duration-300">
-                          {service.secondaryButton}
-                        </button>
-                      )}
-                    </div>
                   </div>
                 </div>
               ))}
@@ -280,17 +212,14 @@ export default function ServicesGrid() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {[
-                  'Managed IT Services',
-                  'Structured Cabling',
-                  'Network & Wireless Design',
-                  'Enterprise WAN/LAN',
-                  'Consultancy',
-                  'CCTV',
-                  'Security Lighting',
-                  'Home & Smart Automation',
-                  'Audio & Visual',
-                  'Alarms Systems',
-                  'Trainings'
+                  'Network Infrastructure',
+                  'Ajax Alarm Systems',
+                  'CCTV Solutions',
+                  'Loxone Automation',
+                  'Audio Visual Systems',
+                  'Professional Installation',
+                  '24/7 Support',
+                  'Free Consultation'
                 ].map((service, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
@@ -300,11 +229,17 @@ export default function ServicesGrid() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-white text-brand-red px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform">
-                  Order Services
+                <button 
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-white text-brand-red px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
+                >
+                  Get Quote
                 </button>
-                <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-brand-red transition-all duration-300">
-                  Get in Touch
+                <button 
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-brand-red transition-all duration-300"
+                >
+                  Contact Us
                 </button>
               </div>
             </div>
@@ -326,3 +261,4 @@ export default function ServicesGrid() {
     </section>
   )
 }
+

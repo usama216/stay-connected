@@ -5,7 +5,9 @@ import SelectingProvider from '@/components/SelectingProvider'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import Testimonials from '@/components/Testimonials'
 import Partners from '@/components/Partners'
+import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
+import CookieConsent from '@/components/CookieConsent'
 
 export default function Home() {
   return (
@@ -22,10 +24,12 @@ export default function Home() {
       <div id="testimonials">
         <Testimonials />
       </div>
-      <Partners />
+      {/* <Partners /> */}
       <div id="contact">
-        <Footer />
+        <ContactForm />
       </div>
+      <Footer />
+      <CookieConsent />
     </main>
   )
 }

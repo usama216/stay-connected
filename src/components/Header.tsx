@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Phone, Mail, Facebook, Linkedin, Instagram, Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -21,6 +22,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
+           
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
                 <span>0121 271 0998</span>
@@ -45,17 +47,21 @@ export default function Header() {
           <div className="flex justify-between items-center h-16 lg:h-20">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="relative group">
-                <div className="w-12 h-12 bg-white border-2 border-gray-800 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-brand-red rounded-lg flex items-center justify-center">
-                    <div className="w-6 h-6 bg-white rounded-lg flex flex-col items-center justify-center">
-                      <div className="w-4 h-2 bg-brand-red rounded-sm mb-1"></div>
-                      <div className="w-2 h-2 bg-brand-red rounded-full"></div>
-                    </div>
-                  </div>
+              <button 
+                onClick={() => scrollToSection('home')}
+                className="relative group cursor-pointer"
+              >
+                <div className="w-16 h-16 relative group-hover:scale-110 transition-transform duration-300">
+                  <Image
+                    src="/log-white.jpeg"
+                    alt="Stay Connected Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
                 </div>
-              </div>
-              <div className="hidden sm:block">
+              </button>
+              {/* <div className="hidden sm:block">
                 <div className="text-xl lg:text-2xl font-bold">
                   <span className="text-brand-red-light">STAY</span>
                   <span className="text-brand-red">CONNECTED</span>
@@ -63,7 +69,7 @@ export default function Header() {
                 <div className="text-xs text-gray-600 uppercase tracking-wide">
                   Security and Network Solutions
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Desktop Navigation */}

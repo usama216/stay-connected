@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowRight, CheckCircle, Shield, Users, Award, Clock } from 'lucide-react'
+import Image from 'next/image'
 
 export default function SelectingProvider() {
   const features = [
@@ -37,9 +38,8 @@ export default function SelectingProvider() {
                 Why Choose Us
               </div>
               <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                Selecting the Finest{' '}
                 <span className="bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
-                  IT Service Provider
+            Your Trusted IT Partner
                 </span>
               </h2>
             </div>
@@ -72,13 +72,7 @@ export default function SelectingProvider() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <button 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group flex items-center justify-center space-x-2 bg-white text-brand-red border-2 border-brand-red px-8 py-4 rounded-full font-semibold hover:bg-brand-red hover:text-white transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                <span>About Us</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+         
               <button 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-gradient-to-r from-brand-red to-brand-red-dark text-white px-8 py-4 rounded-full font-semibold hover:from-brand-red-dark hover:to-brand-red transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
@@ -114,17 +108,23 @@ export default function SelectingProvider() {
               
               {/* Central Logo */}
               <div className="relative z-10 text-center">
-                <div className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-2xl group hover:scale-110 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-brand-red rounded-xl flex items-center justify-center">
-                    <div className="w-10 h-10 bg-white rounded-lg flex flex-col items-center justify-center">
-                      <div className="w-6 h-3 bg-brand-red rounded-sm mb-1"></div>
-                      <div className="w-3 h-3 bg-brand-red rounded-full"></div>
-                    </div>
-                  </div>
+                <div className="w-40 h-40 bg-white rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-2xl group hover:scale-110 transition-transform duration-300">
+                
+                   <div className="w-28 h-28 relative group-hover:scale-110 transition-transform duration-300">
+                                <Image
+                                  src="/log-white.jpeg"
+                                  alt="Stay Connected Logo"
+                                  fill
+                                  className="object-contain"
+                                  priority
+                                />
+                              </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">STAYCONNECTED</h3>
-                <p className="text-white/80 text-sm">Security & Network Solutions</p>
+             
               </div>
+
+
+              
 
               {/* Floating Elements */}
               <div className="absolute top-8 right-8 w-3 h-3 bg-brand-red rounded-full animate-bounce delay-300"></div>

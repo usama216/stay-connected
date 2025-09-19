@@ -1,17 +1,15 @@
 'use client'
 
 import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram, ArrowRight, Shield } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Footer() {
   const services = [
-    'Network & Wireless Design',
-    'Managed IT Services',
-    'Enterprise LAN/WAN',
-    'Security Cameras',
-    'Security Lighting',
-    'Smart Automation',
-    'Alarm Systems',
-    'Training & Consultancy'
+    'Network Infrastructure',
+    'Alarm (Ajax Security Systems)',
+    'CCTV Solutions',
+    'Automation (Loxone)',
+    'Audio Visual Systems'
   ]
 
   const quickLinks = [
@@ -19,10 +17,7 @@ export default function Footer() {
     'Services',
     'About Us',
     'Testimonials',
-    'Contact Us',
-    'Privacy Policy',
-    'Terms of Service',
-    'Sitemap'
+    'Contact Us'
   ]
 
   const scrollToSection = (sectionId: string) => {
@@ -47,36 +42,24 @@ export default function Footer() {
             {/* Company Info */}
             <div className="lg:col-span-1 space-y-6">
               <div className="flex items-center space-x-3">
-                <div className="relative group">
-                  <div className="w-16 h-16 bg-white border-2 border-gray-800 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-10 h-10 bg-brand-red rounded-lg flex items-center justify-center">
-                      <div className="w-8 h-8 bg-white rounded-lg flex flex-col items-center justify-center">
-                        <div className="w-5 h-2 bg-brand-red rounded-sm mb-1"></div>
-                        <div className="w-2 h-2 bg-brand-red rounded-full"></div>
-                      </div>
-                    </div>
+                <button 
+                  onClick={() => scrollToSection('home')}
+                  className="relative group cursor-pointer"
+                >
+                  <div className="w-40 h-40 relative group-hover:scale-110 transition-transform duration-300">
+                    <Image
+                      src="/log-dark.png"
+                      alt="Stay Connected Logo"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold">
-                    <span className="text-brand-red-light">STAY</span>
-                    <span className="text-brand-red">CONNECTED</span>
-                  </div>
-                  <div className="text-xs text-gray-400 uppercase tracking-wide">
-                    Security and Network Solutions
-                  </div>
-                </div>
+                </button>
+           
               </div>
-              <p className="text-gray-300 leading-relaxed">
-                Your trusted partner for comprehensive security and network solutions. 
-                We deliver cutting-edge technology with exceptional service to keep 
-                your business connected and secure.
-              </p>
-              
-              {/* Social Media */}
+           
               <div>
-                <h4 className="text-sm font-semibold text-white mb-4">Follow Us</h4>
-                <div className="flex space-x-4">
+                  <div className="flex space-x-4">
                   <a 
                     href="#" 
                     className="w-12 h-12 bg-white/10 hover:bg-brand-red text-gray-300 hover:text-white rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -102,7 +85,6 @@ export default function Footer() {
             {/* Services */}
             <div>
               <h3 className="text-xl font-bold text-white mb-6 flex items-center">
-                <Shield className="w-5 h-5 mr-2 text-brand-red" />
                 Services
               </h3>
               <ul className="space-y-3">
@@ -206,7 +188,6 @@ export default function Footer() {
               <div className="flex space-x-6 text-sm">
                 <a href="#" className="text-gray-400 hover:text-brand-red transition-colors">Privacy Policy</a>
                 <a href="#" className="text-gray-400 hover:text-brand-red transition-colors">Terms of Service</a>
-                <a href="#" className="text-gray-400 hover:text-brand-red transition-colors">Cookie Policy</a>
               </div>
             </div>
           </div>

@@ -5,15 +5,14 @@ import { Shield, Camera, Home, Wifi, AlertTriangle, GraduationCap, ArrowRight, P
 export default function Hero() {
   const services = [
     { icon: Wifi, label: 'NETWORK', color: 'from-blue-500 to-blue-600' },
+    { icon: AlertTriangle, label: 'ALARM', color: 'from-red-500 to-red-600' },
     { icon: Camera, label: 'CCTV', color: 'from-purple-500 to-purple-600' },
     { icon: Home, label: 'AUTOMATION', color: 'from-green-500 to-green-600' },
-    { icon: Shield, label: 'SECURITY', color: 'from-red-500 to-red-600' },
-    { icon: AlertTriangle, label: 'ALARMS', color: 'from-orange-500 to-orange-600' },
-    { icon: GraduationCap, label: 'TRAINING', color: 'from-indigo-500 to-indigo-600' },
+    { icon: Shield, label: 'AUDIO VISUAL', color: 'from-orange-500 to-orange-600' },
   ]
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 lg:pt-24">
       {/* Modern Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black"></div>
       
@@ -40,49 +39,68 @@ export default function Hero() {
               </div>
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                <span className="block">SMART</span>
+                <span className="block">STAY</span>
                 <span className="block bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
-                  BUSINESSES
+                  CONNECTED
                 </span>
-                <span className="block">USE STAYCONNECTED</span>
+                <span className="block">TO THE FUTURE</span>
               </h1>
               
               <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                Specialists in providing comprehensive security and network solutions 
-                that keep your business connected, secure, and future-ready.
+                Expert solutions in Network Infrastructure, Ajax Security Systems, CCTV, 
+                Loxone Automation, and Audio Visual systems for modern homes and businesses.
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href="/services"
+              <button 
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                 className="group bg-gradient-to-r from-brand-red to-brand-red-dark text-white px-8 py-4 rounded-full font-semibold hover:from-brand-red-dark hover:to-brand-red transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform flex items-center justify-center"
               >
-                Explore Services
+                Our Services
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <button className="group border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 flex items-center justify-center">
+              </button>
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 flex items-center justify-center"
+              >
                 <Play className="w-5 h-5 mr-2" />
-                Watch Demo
+                Get Quote
               </button>
             </div>
           </div>
 
           {/* Right Content - Service Cards */}
-          <div className="grid grid-cols-2 gap-4">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="group relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl"
-              >
-                <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-6 h-6 text-white" />
+          <div className="space-y-4">
+            {/* First 4 cards in 2x2 grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {services.slice(0, 4).map((service, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                >
+                  <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <service.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-white font-semibold text-sm">{service.label}</h3>
+                  <div className="absolute inset-0 bg-gradient-to-r from-brand-red/0 to-brand-red/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <h3 className="text-white font-semibold text-sm">{service.label}</h3>
+              ))}
+            </div>
+            {/* Last service card centered */}
+            <div className="flex justify-center">
+              <div className="group relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl w-full max-w-[calc(50%-0.5rem)]">
+                <div className={`w-12 h-12 bg-gradient-to-r ${services[4].color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 mx-auto`}>
+                  {(() => {
+                    const IconComponent = services[4].icon;
+                    return <IconComponent className="w-6 h-6 text-white" />;
+                  })()}
+                </div>
+                <h3 className="text-white font-semibold text-sm text-center">{services[4].label}</h3>
                 <div className="absolute inset-0 bg-gradient-to-r from-brand-red/0 to-brand-red/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
