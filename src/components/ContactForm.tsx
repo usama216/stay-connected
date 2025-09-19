@@ -35,24 +35,47 @@ export default function ContactForm() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        service: '',
-        message: ''
+    try {
+      const response = await fetch('/api/contact/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          phone: formData.phone,
+          service_interest: formData.service,
+          message: formData.message
+        })
       })
-    }, 3000)
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setIsSubmitted(false)
+          setFormData({
+            name: '',
+            email: '',
+            company: '',
+            phone: '',
+            service: '',
+            message: ''
+          })
+        }, 3000)
+      } else {
+        const errorData = await response.json()
+        console.error('Form submission failed:', errorData)
+        alert('Failed to submit form. Please try again.')
+      }
+    } catch (error) {
+      console.error('Network error:', error)
+      alert('Network error. Please check your connection and try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const services = [
@@ -170,7 +193,7 @@ export default function ContactForm() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300 text-gray-900"
                         placeholder="John Doe"
                       />
                     </div>
@@ -189,7 +212,7 @@ export default function ContactForm() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300 text-gray-900"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -209,7 +232,7 @@ export default function ContactForm() {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300 text-gray-900"
                         placeholder="Your Company"
                       />
                     </div>
@@ -227,7 +250,7 @@ export default function ContactForm() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300 text-gray-900"
                         placeholder="+1 (555) 123-4567"
                       />
                     </div>
@@ -273,7 +296,7 @@ export default function ContactForm() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-300 resize-none text-gray-900"
                     placeholder="Tell us about your project requirements..."
                   />
                 </div>
