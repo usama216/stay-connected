@@ -7,8 +7,8 @@ export async function POST(request: NextRequest) {
     const { email, password } = body
 
     // Validate admin credentials
-    const adminEmail = 'admin@admin.com'
-    const adminPassword = 'Admin@123'
+    const adminEmail = 'aamjaid@hotmail.com'
+    const adminPassword = 'Galaxy786'
 
     if (email !== adminEmail || password !== adminPassword) {
       return NextResponse.json(

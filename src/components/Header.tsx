@@ -23,14 +23,20 @@ export default function Header() {
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
            
-              <div className="flex items-center space-x-2">
+              <a 
+                href="tel:07984760575"
+                className="flex items-center space-x-2 hover:text-white/80 cursor-pointer"
+              >
                 <Phone className="w-4 h-4" />
-                <span>0121 271 0998</span>
-              </div>
-              <div className="flex items-center space-x-2">
+                <span>0798 476 0575</span>
+              </a>
+              <a 
+                href="mailto:aaqib@stay-connected.co.uk"
+                className="flex items-center space-x-2 hover:text-white/80 cursor-pointer"
+              >
                 <Mail className="w-4 h-4" />
-                <span>info@stayconnected.co.uk</span>
-              </div>
+                <span>aaqib@stay-connected.co.uk</span>
+              </a>
             </div>
             <div className="flex items-center space-x-4">
               <Facebook className="w-4 h-4 hover:text-white/80 transition-colors cursor-pointer" />

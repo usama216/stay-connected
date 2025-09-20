@@ -123,38 +123,47 @@ export default function ContactForm() {
 
             {/* Contact Details */}
             <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-dark text-white rounded-xl flex items-center justify-center flex-shrink-0">
+              <a 
+                href="tel:07984760575"
+                className="flex items-start space-x-4 hover:text-gray-700 transition-colors cursor-pointer group focus:outline-none"
+              >
+                <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-dark text-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:from-brand-red-dark group-hover:to-brand-red transition-all">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Phone</h4>
-                  <p className="text-gray-600">+1 (555) 123-4567</p>
-                  <p className="text-gray-600">+1 (555) 987-6543</p>
+                  <p className="text-gray-600">0798 476 0575</p>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-dark text-white rounded-xl flex items-center justify-center flex-shrink-0">
+              <a 
+                href="mailto:aaqib@stay-connected.co.uk"
+                className="flex items-start space-x-4 hover:text-gray-700 transition-colors cursor-pointer group focus:outline-none"
+              >
+                <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-dark text-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:from-brand-red-dark group-hover:to-brand-red transition-all">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Email</h4>
-                  <p className="text-gray-600">info@stayconnected.com</p>
-                  <p className="text-gray-600">support@stayconnected.com</p>
+                  <p className="text-gray-600">aaqib@stay-connected.co.uk</p>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-dark text-white rounded-xl flex items-center justify-center flex-shrink-0">
+              <a 
+                href="https://maps.google.com/?q=3+Whitelands+Way,+High+Wycombe,+Bucks,+HP12+3EH"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start space-x-4 hover:text-gray-700 transition-colors cursor-pointer group focus:outline-none"
+              >
+                <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-dark text-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:from-brand-red-dark group-hover:to-brand-red transition-all">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Office</h4>
-                  <p className="text-gray-600">123 Technology Street</p>
-                  <p className="text-gray-600">Innovation District, NY 10001</p>
+                  <p className="text-gray-600">3 Whitelands Way</p>
+                  <p className="text-gray-600">High Wycombe, Bucks HP12 3EH</p>
                 </div>
-              </div>
+              </a>
             </div>
 
           </div>

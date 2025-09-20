@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { 
   Settings, 
   Wifi, 
@@ -15,11 +16,25 @@ import {
 } from 'lucide-react'
 
 export default function WhatWeOffer() {
+  const [expandedCards, setExpandedCards] = useState<{ [key: number]: boolean }>({})
+  
+  const toggleExpanded = (index: number) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }))
+  }
+
+  const truncateText = (text: string, maxLength: number = 150) => {
+    if (text.length <= maxLength) return text
+    return text.substring(0, maxLength) + '...'
+  }
+
   const services = [
     {
       icon: Wifi,
       title: 'Network',
-      description: 'A strong and secure network is the foundation of every modern home and business. We provide complete network design, structured cabling, and Wi-Fi optimisation to ensure reliable connectivity in every corner of your property.',
+      description: 'A strong and secure network is the foundation of every modern home and business. We provide complete network design, structured cabling, and Wi-Fi optimisation to ensure reliable connectivity in every corner of your property. Whether you need a robust office setup, high-speed home network for streaming and gaming, or a system that supports multiple users and devices, we deliver tailored solutions that are stable, scalable, and future-ready.',
       features: ['Complete Network Design', 'Structured Cabling', 'Wi-Fi Optimisation', 'Scalable Solutions'],
       color: 'from-blue-500 to-blue-600',
       image: '/services/standard-quality-control-concept-m.jpg'
@@ -27,7 +42,7 @@ export default function WhatWeOffer() {
     {
       icon: Shield,
       title: 'Alarm (Ajax Security Systems)',
-      description: 'Security starts with an alarm system you can depend on. We specialise in Ajax — one of the most advanced alarm systems available today. With sleek wireless devices, powerful monitoring features, and instant smartphone alerts.',
+      description: 'Security starts with an alarm system you can depend on. We specialise in Ajax — one of the most advanced alarm systems available today. With sleek wireless devices, powerful monitoring features, and instant smartphone alerts, Ajax gives you complete peace of mind. From motion detectors and door contacts to outdoor sirens, indoor sounders, and keypads, every component is designed for reliability and ease of use. Professionally installed and configured, your Ajax system will protect your home or business around the clock.',
       features: ['Wireless Devices', 'Smartphone Alerts', 'Professional Installation', '24/7 Monitoring'],
       color: 'from-red-500 to-red-600',
       image: '/services/alaram.jpg'
@@ -35,7 +50,7 @@ export default function WhatWeOffer() {
     {
       icon: Camera,
       title: 'CCTV',
-      description: 'Protect what matters most with high-definition CCTV solutions from leading brands. We install Hikvision, Uniview, and Ajax cameras, giving you a wide choice of trusted technology for any property size or requirement.',
+      description: 'Protect what matters most with high-definition CCTV solutions from leading brands. We install Hikvision, Uniview, and Ajax cameras, giving you a wide choice of trusted technology for any property size or requirement. From discreet indoor domes to advanced AI-powered outdoor cameras with night vision, motion alerts, and remote mobile viewing, we design systems tailored to your needs. With crystal-clear footage and reliable performance, our CCTV installations give you complete visibility and control, whether at home, at work, or on the move.',
       features: ['HD/4K Cameras', 'Night Vision', 'Motion Alerts', 'Remote Viewing'],
       color: 'from-purple-500 to-purple-600',
       image: '/services/cctv.jpg'
@@ -43,7 +58,8 @@ export default function WhatWeOffer() {
     {
       icon: Home,
       title: 'Automation',
-      description: 'As an official Loxone Partner, we deliver smart automation systems that transform the way you live and work. From intelligent lighting and heating to blinds, gates, and full building management.',
+      // description: 'As an official Loxone Partner, we deliver smart automation systems that transform the way you live and work. From intelligent lighting and heating to blinds, gates, and full building management.',
+      description: 'At Stay Connected, we provide a complete range of home and business automation solutions designed to make everyday living smarter, simpler, and more efficient. Whether it’s intelligent lighting, heating, shading, audio-visual, or full building control, we work with leading platforms such as Loxone, Shelly, RTI, Rithum, and Control4 to deliver systems tailored to your lifestyle and needs. From single-room solutions to whole-property automation, we create seamless control through wall panels, apps, or voice assistants, giving you the ability to manage your environment effortlessly. With our expertise, you can enjoy enhanced comfort, energy efficiency, and convenience. All integrated into one powerful, easy-to-use system.',
       features: ['Smart Lighting', 'Climate Control', 'Building Management', 'Voice Integration'],
       color: 'from-green-500 to-green-600',
       image: '/services/automation.jpg'
@@ -51,14 +67,14 @@ export default function WhatWeOffer() {
     {
       icon: Volume2,
       title: 'Audio Visual',
-      description: 'Experience entertainment like never before with bespoke audio-visual solutions. Whether you\'re looking for a cinematic home theatre, multi-room audio, or professional AV systems for offices.',
+      description: 'Experience entertainment like never before with bespoke audio-visual solutions. Whether you’re looking for a cinematic home theatre, multi-room audio, or professional AV systems for offices, retail, or hospitality, we deliver stunning visuals and rich sound tailored to your space. Our installations cover everything from concealed cabling and precision speaker placement to high-quality projectors and surround-sound systems. With intuitive controls and premium equipment, your AV system will look sleek, sound incredible, and be simple to use.',
       features: ['Home Theatre', 'Multi-room Audio', 'Professional AV', 'Concealed Cabling'],
       color: 'from-orange-500 to-orange-600',
       image: '/services/audio-visuals.jpg'
     }
   ]
 
-  return (
+return (
     <section className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -111,9 +127,18 @@ export default function WhatWeOffer() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-brand-red transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    {service.description}
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    {expandedCards[index] ? service.description : truncateText(service.description)}
                   </p>
+                  {service.description.length > 150 && (
+                    <button
+                      onClick={() => toggleExpanded(index)}
+                      className="text-brand-red hover:text-brand-red-dark font-medium text-sm transition-colors duration-200 mb-6 inline-flex items-center gap-1 focus:outline-none"
+                    >
+                      {expandedCards[index] ? 'Read Less' : 'Read More'}
+                      <ArrowRight className={`w-3 h-3 transition-transform duration-200 ${expandedCards[index] ? 'rotate-90' : 'rotate-0'}`} />
+                    </button>
+                  )}
                   
                   {/* Features */}
                   <div className="space-y-2 mb-6">

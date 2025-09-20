@@ -130,11 +130,13 @@ export default function Footer() {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Email</p>
+                   
+
                     <a 
-                      href="mailto:info@stayconnected.co.uk" 
+                      href="mailto: aaqib@stay-connected.co.uk" 
                       className="text-white hover:text-brand-red transition-colors font-medium"
                     >
-                      info@stayconnected.co.uk
+                       aaqib@stay-connected.co.uk
                     </a>
                   </div>
                 </div>
@@ -146,23 +148,33 @@ export default function Footer() {
                   <div>
                     <p className="text-gray-400 text-sm">Phone</p>
                     <a 
-                      href="tel:01212710998" 
+                      href="tel:07984760575" 
                       className="text-white hover:text-brand-red transition-colors font-medium"
                     >
-                      0121 271 0998
+                    
+                      0798 476 0575
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-3">
-                  <div className="w-10 h-10 bg-brand-red/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <a 
+                  href="https://maps.google.com/?q=3+Whitelands+Way,+High+Wycombe,+Bucks,+HP12+3EH"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start space-x-3 hover:text-white/80 transition-colors cursor-pointer group"
+                >
+                  <div className="w-10 h-10 bg-brand-red/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-brand-red/30 transition-colors">
                     <MapPin className="w-5 h-5 text-brand-red" />
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Location</p>
-                    <span className="text-white font-medium">Nationwide</span>
+                    <div className="text-white font-medium">
+                      <div>3 Whitelands Way</div>
+                      <div>High Wycombe, Bucks</div>
+                      <div>HP12 3EH</div>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
 
               {/* CTA Button */}
