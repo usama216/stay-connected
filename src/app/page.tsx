@@ -8,6 +8,7 @@ import Partners from '@/components/Partners'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
 import CookieConsent from '@/components/CookieConsent'
+import ScrollToTop from '@/components/ScrollToTop'
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
       </div>
       <Footer />
       <CookieConsent />
+      <ScrollToTop />
     </main>
   )
 }
